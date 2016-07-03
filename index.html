@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Javascript Exercises</title>
+<script type="text/javascript" src="js/main.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("factorial of 5 is "+ factorial(5));
+		document.write("<br/>");
+		document.write("fizzbuzz output of 15 is "+fizzbuzz(15));
+		document.write("<br/>");
+
+
+		document.write("student name is "+ student.name);
+		document.write("<br/>");
+		document.write("speak :  "+ student.speak());
+		document.write("<br/>");
+		document.write("student lives at "+ student.address.street);
+		document.write("<br/>");
+
+		//getter and setter
+		document.write("student address : "+ student.getAddress);
+		document.write("<br/>");
+		student.setAddress="321 South Road, Melbourne";
+		document.write("student new address : "+ student.getAddress);
+		document.write("<br/><br/>");
+		
+		/* function constructor */
+		var tom = new Employee("Tom Jerry", "Google");
+		document.write("info : "+ tom.info());
+		document.write("<br/>");
+		var tony = new Employee("Tony Starks", "Facebook");
+		document.write("info : "+ tony.info());
+		document.write("<br/>");
+		document.write("Tony is an Employee "+ (tony instanceof Employee));		
+		document.write("<br/><br/>");
+
+		// prototypes
+		document.write("Employee's number of arguments is "+Employee.length);
+		Employee.prototype.salary = 120000.0;
+		Employee.prototype.work=function () {
+			return this.name +" started working with a salary of "+this.salary;
+		}
+
+		var bruce=new Employee("Bruce Wayne", "Instagram");
+		document.write("<br/>");
+		document.write("Bruce Wayne's salary is "+bruce.salary);
+		document.write("<br/>");
+		document.write("work : "+bruce.work());
+		document.write("<br/>");
+
+		for(var prop in bruce){
+			document.write(prop+" : "+bruce[prop]);
+			document.write("<br/>");
+		}
+
+		//inheritance
+		//Child.prototype = new Parent();
+		//Child.prototype.constructor = Child;
+
+
+
+
+	</script>
+</body>
+</html>
